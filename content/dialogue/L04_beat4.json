@@ -1,0 +1,16 @@
+{
+  "id": "L04_beat4",
+  "_source": "docs/level4-script.md, 'Beat 4 — King Street (Boston, March 5, 1770)'",
+  "conversations": {
+    "kit_running": [
+      { "speaker": "kit", "text": "Something's happened on King Street. Soldiers fired into the crowd. People are dead." }
+    ],
+    "senoj_weigh": [
+      { "speaker": "senoj", "text": "Every printer in Boston is about to tell this story. Before you believe any of them, weigh the evidence." }
+    ],
+    "john_adams": [
+      { "speaker": "sivart", "text": "Wait, John Adams? The Patriot? He defended the soldiers?" },
+      { "speaker": "senoj", "text": "He believed everyone deserves a fair trial. He said facts are stubborn things, and they can't be changed by our wishes. Keep that one." }
+    ]
+  }
+}

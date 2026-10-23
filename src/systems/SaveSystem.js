@@ -7,8 +7,13 @@ import LZString from 'lz-string';
  * What gets saved is small on purpose: IDs and true/false flags, never long text
  * (see "Save system" in docs/bible.md). Example:
  *
- *   { v: 1, levels: { L04: { started: true, quests: [], trial: null } },
+ *   { v: 1,
+ *     levels: { L04: { started: true, quests: [], trial: null,
+ *                      progress: { quest: "L04_main", beat: "b3_pay_up", step: 1,
+ *                                  done: ["docks"], map: "l04-boston", spawn: "shop" } } },
  *     pages: [], retSiger: {}, periods: 0, flags: [] }
+ *
+ * "quests" lists finished quests; "progress" is where Sivart is in the current one.
  *
  * A save code looks like "HRPG-" followed by letters and numbers. Inside it is the save
  * data, its version number, and a checksum (a fingerprint of the data), so a code that was
@@ -41,6 +46,7 @@ function normalize(raw) {
         started: Boolean(level.started),
         quests: strings(level.quests),
         trial: typeof level.trial === 'string' ? level.trial.slice(0, MAX_TRIAL_ANSWER) : null,
+        progress: normalizeProgress(level.progress),
       };
     }
   }
@@ -51,6 +57,20 @@ function normalize(raw) {
   }
   clean.periods = Math.min(6, Math.max(0, Math.floor(Number(raw.periods) || 0)));
   return clean;
+}
+
+/** Cleans up "where am I in the quest" data, or returns null if there isn't any. */
+function normalizeProgress(p) {
+  if (!p || typeof p !== 'object' || typeof p.beat !== 'string') return null;
+  const text = (value) => (typeof value === 'string' ? value : null);
+  return {
+    quest: text(p.quest),
+    beat: p.beat,
+    step: Math.max(0, Math.floor(Number(p.step) || 0)),
+    done: Array.isArray(p.done) ? p.done.filter((x) => typeof x === 'string') : [],
+    map: text(p.map),
+    spawn: text(p.spawn),
+  };
 }
 
 /** A short fingerprint of a piece of text (FNV-1a hash). Any change to the text changes it. */
@@ -114,10 +134,36 @@ class SaveSystem {
     return this.data.levels[levelId] ?? null;
   }
 
+  /** The save entry for a level, created empty if needed. */
+  level(levelId) {
+    return (this.data.levels[levelId] ??= { started: false, quests: [], trial: null, progress: null });
+  }
+
   markLevelStarted(levelId) {
-    const level = (this.data.levels[levelId] ??= { started: false, quests: [], trial: null });
+    const level = this.level(levelId);
     if (level.started) return;
     level.started = true;
+    this.autosave();
+  }
+
+  questProgress(levelId) {
+    return this.data.levels[levelId]?.progress ?? null;
+  }
+
+  /** Saves where Sivart is in a quest. Called after every quest step. */
+  setQuestProgress(levelId, progress) {
+    this.level(levelId).progress = { ...progress, done: [...progress.done] };
+    this.autosave();
+  }
+
+  isQuestDone(levelId, questId) {
+    return Boolean(this.data.levels[levelId]?.quests.includes(questId));
+  }
+
+  completeQuest(levelId, questId) {
+    const level = this.level(levelId);
+    if (!level.quests.includes(questId)) level.quests.push(questId);
+    level.progress = null;
     this.autosave();
   }
 

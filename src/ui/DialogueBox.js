@@ -76,6 +76,21 @@ export class DialogueBox {
     const name = this.speakers[line.speaker]?.name ?? line.speaker ?? '';
     this.speakerEl.textContent = name;
     this.speakerEl.hidden = !name;
-    this.textEl.textContent = line.text;
+    this.textEl.replaceChildren(...withEmphasis(line.text));
   }
+}
+
+/**
+ * Turns *words in stars* into italics, like the script does
+ * ("They're taxing *our* paper?"). Everything else stays plain text.
+ */
+function withEmphasis(text) {
+  return String(text)
+    .split(/\*([^*]+)\*/)
+    .map((part, i) => {
+      if (i % 2 === 0) return document.createTextNode(part);
+      const em = document.createElement('em');
+      em.textContent = part;
+      return em;
+    });
 }

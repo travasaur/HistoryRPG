@@ -1,0 +1,7 @@
+{
+  "id": "tavern_keeper",
+  "name": "Tavern Keeper",
+  "type": "composite",
+  "sprite": "people",
+  "frame": 6
+}

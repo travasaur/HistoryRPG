@@ -1,0 +1,14 @@
+{
+  "id": "L04_beat6",
+  "_source": "docs/level4-script.md, 'Beat 6 — The Squeeze (Boston and Philadelphia, 1774–1775)'",
+  "conversations": {
+    "harbor_closed": [
+      { "speaker": "kit", "text": "They closed the whole harbor. No ships in, no ships out, until we pay for the tea. And town meetings are basically banned." }
+    ],
+    "congress": [
+      { "speaker": "delegate", "text": "Twelve colonies are here. We will stop trading with Britain, and we will send a petition to the King. If he does not listen, we meet again in May." },
+      { "speaker": "sivart", "text": "They're still asking the King nicely?" },
+      { "speaker": "senoj", "text": "Most of them still wanted to stay British. Watch how fast that changes." }
+    ]
+  }
+}

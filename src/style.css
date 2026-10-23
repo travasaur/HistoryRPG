@@ -344,3 +344,194 @@ body {
   background: transparent;
   border: 1px dashed #b5a88f;
 }
+
+/* Anything marked hidden stays hidden, whatever its other styles say. */
+#ui-root [hidden] {
+  display: none !important;
+}
+
+/* ---------- Story cards (dates, time skips, scene descriptions) ---------- */
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  background: rgba(10, 10, 20, 0.7);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  width: min(600px, 100%);
+  box-sizing: border-box;
+  padding: 24px 24px 36px;
+  background: #f3e3b5; /* old paper */
+  color: #2b2118;
+  border: 4px solid #3b2f2f;
+  border-radius: 10px;
+  font-size: var(--text-size);
+  line-height: 1.5;
+  text-align: center;
+  user-select: none;
+}
+
+.card__title {
+  margin-bottom: 8px;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #7a3b12;
+}
+
+.card__text {
+  margin: 0;
+}
+
+.card__hint {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  font-size: 14px;
+  color: #6b5d50;
+}
+
+.card__tag {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 2px 10px;
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: #6b5d50;
+  border-radius: 999px;
+}
+
+.card--intro .card__title {
+  font-size: 1.6em;
+}
+
+.card--intro .card__text {
+  font-style: italic;
+}
+
+/* "Coming in a later milestone" placeholders look different on purpose. */
+.card--todo {
+  background: #e9eef5;
+  border: 4px dashed #5b6b80;
+  color: #2b3440;
+}
+
+.card--todo .card__title {
+  color: #3b5ba5;
+}
+
+.card--hint {
+  background: #fffaf0;
+}
+
+/* ---------- Questions (Record checks and story choices) ---------- */
+
+.overlay--low {
+  align-items: flex-end;
+  background: rgba(10, 10, 20, 0.45);
+}
+
+.panel--choice {
+  width: min(720px, 100%);
+}
+
+.choice__prompt {
+  font-weight: 700;
+}
+
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  text-align: left;
+  color: #222;
+  background: #fff;
+  border: 2px solid #d8ccb4;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.choice:hover,
+.choice:focus-visible {
+  border-color: #3b5ba5;
+  outline: 3px solid #f1c40f;
+}
+
+.choice__number {
+  flex: 0 0 1.6em;
+  height: 1.6em;
+  line-height: 1.6em;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  background: #3b5ba5;
+  border-radius: 50%;
+}
+
+/* ---------- Objective box and place-name banner ---------- */
+
+.objective {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  max-width: min(320px, calc(100% - 90px));
+  padding: 8px 12px;
+  background: rgba(255, 250, 240, 0.92);
+  color: #222;
+  border: 3px solid #3b2f2f;
+  border-radius: 8px;
+  font-size: calc(var(--text-size) * 0.75);
+  line-height: 1.35;
+}
+
+.objective__beat {
+  font-weight: 700;
+  color: #7a3b12;
+}
+
+.objective__list {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.objective__list .done {
+  color: #3a8f4b;
+  text-decoration: line-through;
+}
+
+.banner {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 32px);
+  padding: 6px 16px;
+  background: rgba(20, 20, 30, 0.85);
+  color: #fffaf0;
+  border-radius: 999px;
+  font-size: calc(var(--text-size) * 0.85);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* On narrow screens, drop the banner below the objective box so they don't overlap. */
+@media (max-width: 600px) {
+  .banner {
+    top: 120px;
+  }
+}

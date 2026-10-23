@@ -3,7 +3,9 @@
   "spritesheets": [
     { "key": "player", "url": "assets/sprites/player-placeholder.png", "frameWidth": 16, "frameHeight": 16 },
     { "key": "npc-senoj", "url": "assets/sprites/senoj-placeholder.png", "frameWidth": 16, "frameHeight": 16 },
-    { "key": "living-record", "url": "assets/sprites/record-placeholder.png", "frameWidth": 16, "frameHeight": 16 }
+    { "key": "people", "url": "assets/sprites/people-placeholder.png", "frameWidth": 16, "frameHeight": 16 },
+    { "key": "living-record", "url": "assets/sprites/record-placeholder.png", "frameWidth": 16, "frameHeight": 16 },
+    { "key": "marker", "url": "assets/sprites/marker-placeholder.png", "frameWidth": 16, "frameHeight": 16 }
   ],
   "images": [],
   "tilesets": [
@@ -11,6 +13,10 @@
   ],
   "maps": [
     { "key": "archive", "url": "maps/archive.tmj" },
-    { "key": "test-map", "url": "maps/test-map.tmj" }
+    { "key": "test-map", "url": "maps/test-map.tmj" },
+    { "key": "l04-frontier", "url": "maps/l04-frontier.tmj" },
+    { "key": "l04-boston", "url": "maps/l04-boston.tmj" },
+    { "key": "l04-philadelphia", "url": "maps/l04-philadelphia.tmj" },
+    { "key": "l04-lexington", "url": "maps/l04-lexington.tmj" }
   ]
 }

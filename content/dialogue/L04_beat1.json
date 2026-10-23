@@ -1,0 +1,22 @@
+{
+  "id": "L04_beat1",
+  "_source": "docs/level4-script.md, 'Beat 1 — The Scout (Ohio frontier, 1754)'",
+  "conversations": {
+    "kit": [
+      { "speaker": "kit", "text": "You're the new scout? Good. I'm only here because my uncle's in the militia and somebody had to carry the paper and ink. Colonel Washington wants eyes on the French." }
+    ],
+    "washington": [
+      { "speaker": "washington", "text": "Scout. The French claim this whole valley and have built forts to hold it. Virginia claims it too. Find out how many are coming." }
+    ],
+    "report": [
+      { "speaker": "sivart", "text": "There are a lot of them. Way more than us." },
+      { "speaker": "washington", "text": "Then we hold this fort as long as we can." }
+    ],
+    "kit_after": [
+      { "speaker": "kit", "text": "We lost. But Britain will send its army now. And armies cost money… somebody's going to have to pay for all this." }
+    ],
+    "check_hint": [
+      { "speaker": "senoj", "text": "Look at the map. Whose color covers it now?" }
+    ]
+  }
+}

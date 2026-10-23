@@ -24,6 +24,19 @@ dialogue · Esc (or the ☰ button) for the pause menu: text size, save code, le
 menu → Get save code → Copy, then on the other computer choose "I have a save code" on the
 title screen.
 
+**Testing shortcut:** with `?debug` in the address, press `]` to skip a "talk to" or "go to"
+step.
+
+## Editing the story
+
+- A level's main quest is one file: `content/quests/L04_main.json`. Each beat lists its map,
+  where its NPCs stand, and its steps in order. The `_howTo` note at the top explains the
+  step types.
+- What people say is in `content/dialogue/L04_beat1.json` (and so on), one file per beat. A
+  quest step points at a conversation like `"L04_beat1#kit"` (file `#` conversation name).
+  Put `*stars*` around a word to make it italic.
+- Each character's name and placeholder picture is in `content/npcs/<id>.json`.
+
 `npm run build` makes the finished website in `dist/` (for GitHub Pages).
 
 ## Where things live

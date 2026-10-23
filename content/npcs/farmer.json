@@ -1,0 +1,7 @@
+{
+  "id": "farmer",
+  "name": "Farmer",
+  "type": "composite",
+  "sprite": "people",
+  "frame": 3
+}

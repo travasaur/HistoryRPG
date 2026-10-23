@@ -1,0 +1,7 @@
+{
+  "id": "british_officer",
+  "name": "British Officer",
+  "type": "composite",
+  "sprite": "people",
+  "frame": 2
+}

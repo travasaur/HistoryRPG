@@ -1,0 +1,7 @@
+{
+  "id": "merchant",
+  "name": "Merchant",
+  "type": "composite",
+  "sprite": "people",
+  "frame": 6
+}

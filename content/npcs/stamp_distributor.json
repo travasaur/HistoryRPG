@@ -1,0 +1,7 @@
+{
+  "id": "stamp_distributor",
+  "name": "Stamp Distributor",
+  "type": "composite",
+  "sprite": "people",
+  "frame": 7
+}

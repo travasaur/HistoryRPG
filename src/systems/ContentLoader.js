@@ -28,6 +28,23 @@ export function loadAllContent(paths) {
   return Promise.all(paths.map(loadContent));
 }
 
+/**
+ * Loads the lines of one conversation. Two ways to name a conversation:
+ *
+ *   'test'                 the whole file content/dialogue/test.json (its "lines")
+ *   'L04_beat1#kit'        the "kit" conversation inside content/dialogue/L04_beat1.json
+ *                          (files with several conversations keep them under "conversations")
+ */
+export async function loadDialogue(ref) {
+  const [file, name] = ref.split('#');
+  const data = await loadContent(`dialogue/${file}`);
+  const lines = name ? data.conversations?.[name] : data.lines;
+  if (!Array.isArray(lines)) {
+    throw new Error(`Conversation "${name ?? file}" was not found in content/dialogue/${file}.json.`);
+  }
+  return lines;
+}
+
 async function fetchJson(path) {
   const url = `${import.meta.env.BASE_URL}content/${path}.json`;
   const response = await fetch(url);

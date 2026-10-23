@@ -1,0 +1,7 @@
+{
+  "id": "customs_officer",
+  "name": "Customs Officer",
+  "type": "composite",
+  "sprite": "people",
+  "frame": 5
+}

@@ -1,0 +1,244 @@
+{
+  "id": "L04_main",
+  "level": "L04",
+  "title": "The Road to Revolution",
+  "standards": ["8.1"],
+  "_source": "docs/level4-script.md. Card and dialogue text is copied from the script. Steps with type 'todo' mark systems that later milestones build; they show a short notice card for now.",
+  "_howTo": "Step types: dialogue (plays now), talk (wait for Sivart to talk to an NPC), goto (wait for Sivart to walk into an area), anyOrder (several talk/goto steps, any order), card (full-screen text), check (Record check: one right answer, hint on a wrong one), choice (all answers OK, choice is saved), travel (go to another map), flash (screen flash), todo (placeholder for a later system).",
+  "beats": [
+    {
+      "id": "opening",
+      "title": "Opening",
+      "place": "The Archive",
+      "map": "archive",
+      "spawn": "start",
+      "showIntro": false,
+      "npcs": [],
+      "steps": [
+        { "type": "todo", "milestone": 4, "text": "The Living Record lies open on Mr. Senoj's desk. The page titled \"1754–1775\" is gray and blank." },
+        { "type": "dialogue", "dialogue": "L04_opening#briefing" },
+        { "type": "card", "title": "Level question", "text": "How did tighter British control lead to armed conflict?" },
+        { "type": "dialogue", "dialogue": "L04_opening#send_off" },
+        { "type": "travel", "map": "l04-frontier", "spawn": "fort" }
+      ]
+    },
+    {
+      "id": "b1_scout",
+      "title": "Beat 1: The Scout",
+      "place": "Ohio frontier, 1754",
+      "map": "l04-frontier",
+      "spawn": "fort",
+      "npcs": [
+        { "npc": "kit", "spot": "kit_fort" },
+        { "npc": "washington", "spot": "washington_fort" }
+      ],
+      "steps": [
+        { "type": "talk", "npc": "kit", "dialogue": "L04_beat1#kit" },
+        { "type": "talk", "npc": "washington", "dialogue": "L04_beat1#washington" },
+        { "type": "goto", "area": "french_lookout", "objective": "Scout the woods to the north" },
+        { "type": "todo", "milestone": 5, "text": "Scouting minigame: sneak through the woods, count French and allied Native soldiers, avoid being seen. No combat." },
+        { "type": "talk", "npc": "washington", "dialogue": "L04_beat1#report", "objective": "Report back to Colonel Washington" },
+        { "type": "card", "title": "July 3, 1754", "text": "After a day of fighting in the rain, Washington surrenders Fort Necessity to the French. It is the opening of the French and Indian War." },
+        { "type": "dialogue", "dialogue": "L04_beat1#kit_after" },
+        { "type": "card", "title": "1763", "text": "Britain wins the war. France gives up Canada and its lands east of the Mississippi. Britain's national debt has nearly doubled." },
+        {
+          "type": "check",
+          "id": "L04_check_war_end",
+          "prompt": "Record check: Why does the end of this war matter for the colonies?",
+          "choices": [
+            "Britain won a lot of land and now needs money to pay for the war and protect it.",
+            "The colonists won independence from France and Britain.",
+            "France now controls the Ohio Valley."
+          ],
+          "answer": 0,
+          "hint": "L04_beat1#check_hint"
+        },
+        { "type": "todo", "milestone": null, "text": "Historidex: George Washington unlocks here." }
+      ]
+    },
+    {
+      "id": "b2_line",
+      "title": "Beat 2: The Line",
+      "place": "Frontier trading post, 1763",
+      "map": "l04-frontier",
+      "spawn": "post",
+      "npcs": [
+        { "npc": "british_officer", "spot": "officer_post" },
+        { "npc": "settler", "spot": "settler_post" },
+        { "npc": "lenape_trader", "spot": "trader_post" }
+      ],
+      "steps": [
+        { "type": "talk", "npc": "british_officer", "dialogue": "L04_beat2#proclamation", "objective": "See what the British officer is nailing to the post" },
+        { "type": "todo", "milestone": 4, "text": "Perspective Lens unlocks: view the line from the settler's side, the trader's side, and the officer's side. Each view adds a sentence to the Record." },
+        { "type": "dialogue", "dialogue": "L04_beat2#officer_lens" },
+        {
+          "type": "check",
+          "id": "L04_check_proclamation",
+          "prompt": "Record check: Why did Britain create the Proclamation Line?",
+          "choices": [
+            "To punish the colonists for losing Fort Necessity.",
+            "To avoid more costly wars with Native nations on the frontier.",
+            "To give the land to France."
+          ],
+          "answer": 1
+        },
+        { "type": "todo", "milestone": 4, "text": "Archive Page unlocked: AP-07, Proclamation Line map." },
+        { "type": "todo", "milestone": 5, "text": "Side quest marker appears: Pontiac's War." }
+      ]
+    },
+    {
+      "id": "b3_pay_up",
+      "title": "Beat 3: Pay Up",
+      "place": "Boston, 1764–1767",
+      "map": "l04-boston",
+      "spawn": "shop",
+      "npcs": [
+        { "npc": "kit", "spot": "kit_shop" },
+        { "npc": "stamp_distributor", "spot": "stamp_distributor" },
+        { "npc": "customs_officer", "spot": "customs_officer" },
+        { "npc": "merchant", "spot": "merchant" },
+        { "npc": "clerk", "spot": "clerk" },
+        { "npc": "farmer", "spot": "farmer" },
+        { "npc": "sergeant", "spot": "sergeant" },
+        { "npc": "tavern_keeper", "spot": "tavern_keeper" }
+      ],
+      "steps": [
+        { "type": "talk", "npc": "kit", "dialogue": "L04_beat3#welcome" },
+        {
+          "type": "anyOrder",
+          "objective": "Visit the four stations around Boston",
+          "steps": [
+            { "id": "docks", "type": "talk", "npc": "customs_officer", "dialogue": "L04_beat3#docks_sugar_act", "label": "Docks: Sugar Act, 1764" },
+            { "id": "market", "type": "talk", "npc": "clerk", "dialogue": "L04_beat3#market_currency_act", "label": "Market: Currency Act, 1764" },
+            { "id": "print_shop", "type": "talk", "npc": "stamp_distributor", "dialogue": "L04_beat3#shop_stamp_act", "label": "Print shop: Stamp Act, 1765" },
+            { "id": "tavern", "type": "talk", "npc": "sergeant", "dialogue": "L04_beat3#tavern_quartering_act", "label": "Tavern: Quartering Act, 1765" }
+          ]
+        },
+        { "type": "todo", "milestone": 4, "text": "Each completed station adds a tax stamp to the Record." },
+        { "type": "talk", "npc": "kit", "dialogue": "L04_beat3#representation", "objective": "Go back to Kit at the print shop" },
+        {
+          "type": "choice",
+          "id": "L04_first_protest",
+          "prompt": "The colonists' response: which protest do you join first?",
+          "choices": [
+            "Join the boycott: refuse to buy British goods.",
+            "Attend the Stamp Act Congress, where nine colonies petition the King.",
+            "Watch the Sons of Liberty force the stamp distributor to resign."
+          ]
+        },
+        { "type": "todo", "milestone": 4, "text": "All three protests are historically real, and all get logged in the Record." },
+        { "type": "card", "title": "1766", "text": "Parliament repeals the Stamp Act, the same day it passes the Declaratory Act, claiming the right to make laws for the colonies \"in all cases whatsoever.\"" },
+        { "type": "card", "title": "1767", "text": "The Townshend Acts tax glass, lead, paint, paper, and tea." },
+        { "type": "dialogue", "dialogue": "L04_beat3#after_townshend" },
+        { "type": "todo", "milestone": null, "text": "Metaphor Match (recap): seven picture cards show acts and events as metaphors; Sivart names each one, then builds one of his own. Grants XP and the Historidex card for the Sons of Liberty." },
+        { "type": "todo", "milestone": 4, "text": "Archive Pages unlocked: AP-01 Grenville's speech, AP-02 imports chart, AP-05 Quartering Act, AP-06 Stamp Act, AP-08 tea boycott." },
+        { "type": "todo", "milestone": 5, "text": "Side quest markers appear: Daughters of Liberty, Committees of Correspondence." }
+      ]
+    },
+    {
+      "id": "b4_king_street",
+      "title": "Beat 4: King Street",
+      "place": "Boston, March 5, 1770",
+      "map": "l04-boston",
+      "spawn": "king_street",
+      "mood": { "l04-boston": "night" },
+      "npcs": [
+        { "npc": "kit", "spot": "kit_king_street" }
+      ],
+      "steps": [
+        { "type": "card", "title": "King Street", "text": "Night, snow on the ground. Redcoats have been stationed in Boston for over a year. A crowd gathers outside the Custom House." },
+        { "type": "dialogue", "dialogue": "L04_beat4#kit_running" },
+        { "type": "card", "title": "March 5, 1770", "text": "Five colonists were killed, including Crispus Attucks, a sailor of African and Native descent. Captain Thomas Preston and eight soldiers were arrested." },
+        { "type": "dialogue", "dialogue": "L04_beat4#senoj_weigh" },
+        { "type": "todo", "milestone": 4, "text": "Weigh the Evidence trial: \"The soldiers fired on purpose at a peaceful crowd.\" Sivart rates seven exhibits from −2 to +2." },
+        { "type": "card", "title": "The real outcome", "text": "John Adams defended the soldiers in court. Preston and six soldiers were acquitted; two were convicted of manslaughter." },
+        { "type": "dialogue", "dialogue": "L04_beat4#john_adams" },
+        { "type": "todo", "milestone": 4, "text": "Archive Page AP-12 unlocks fully." },
+        { "type": "todo", "milestone": null, "text": "Historidex: John Adams, Crispus Attucks." }
+      ]
+    },
+    {
+      "id": "b5_tea",
+      "title": "Beat 5: Tea in the Harbor",
+      "place": "Griffin's Wharf, December 16, 1773",
+      "map": "l04-boston",
+      "spawn": "shop",
+      "mood": { "l04-boston": "night" },
+      "npcs": [
+        { "npc": "kit", "spot": "kit_shop" }
+      ],
+      "steps": [
+        { "type": "card", "title": "1770 and 1773", "text": "1770: Parliament repeals the Townshend duties except the tax on tea. 1773: the Tea Act lets the East India Company sell tea directly to the colonies, cheaper than smuggled tea, but the tax stays." },
+        { "type": "talk", "npc": "kit", "dialogue": "L04_beat5#cheaper_tea" },
+        { "type": "goto", "area": "griffins_wharf", "objective": "Go to Griffin's Wharf" },
+        { "type": "card", "title": "Griffin's Wharf", "text": "Night at the wharf. Members of the Sons of Liberty, some disguised as Mohawk Indians, board three ships." },
+        { "type": "todo", "milestone": 5, "text": "Minigame: haul tea chests to the rail and dump them, 342 chests, against the clock, while keeping the rule the protesters set: nothing else on the ships gets damaged." },
+        {
+          "type": "check",
+          "id": "L04_check_tea_party",
+          "prompt": "Record check: What were the colonists protesting at the Boston Tea Party?",
+          "choices": [
+            "The Stamp Act",
+            "The Intolerable Acts",
+            "The Tea Act and Parliament's right to tax them"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "b6_squeeze",
+      "title": "Beat 6: The Squeeze",
+      "place": "Boston and Philadelphia, 1774–1775",
+      "map": "l04-boston",
+      "spawn": "shop",
+      "mood": { "l04-boston": "gloom" },
+      "npcs": [
+        { "npc": "kit", "spot": "kit_shop" },
+        { "npc": "delegate", "spot": "delegate" }
+      ],
+      "steps": [
+        { "type": "card", "title": "Boston, 1774", "text": "Warships block the harbor, soldiers are in the streets, and shops are shuttered." },
+        { "type": "talk", "npc": "kit", "dialogue": "L04_beat6#harbor_closed" },
+        { "type": "card", "title": "The Intolerable Acts", "text": "The port is closed. Massachusetts' government is restricted. British officials are tried outside the colony. Troops are quartered in empty buildings. And the Quebec Act extends Quebec into the Ohio Valley." },
+        { "type": "todo", "milestone": 4, "text": "The Intolerable Acts display as four broken links in the Record, with the Quebec Act as a fifth." },
+        { "type": "travel", "map": "l04-philadelphia", "spawn": "street" },
+        { "type": "card", "title": "Philadelphia", "text": "Carpenters' Hall, September 1774." },
+        { "type": "talk", "npc": "delegate", "dialogue": "L04_beat6#congress", "objective": "Go to Carpenters' Hall" },
+        { "type": "card", "title": "March 1775, Richmond, Virginia", "text": "Patrick Henry urges Virginia to arm its militia, ending with the famous words \"Give me liberty, or give me death!\" (as later recorded by his biographer)." }
+      ]
+    },
+    {
+      "id": "b7_one_if_by_land",
+      "title": "Beat 7: One If by Land",
+      "place": "Boston to Lexington, April 18–19, 1775",
+      "map": "l04-boston",
+      "spawn": "north_end",
+      "mood": { "l04-boston": "night", "l04-lexington": "dawn" },
+      "npcs": [
+        { "npc": "kit", "spot": "kit_north_end" }
+      ],
+      "steps": [
+        { "type": "card", "title": "Night, Boston", "text": "General Gage is sending about 700 soldiers to destroy the colonists' weapons and supplies stored at Concord." },
+        { "type": "talk", "npc": "kit", "dialogue": "L04_beat7#lanterns" },
+        { "type": "goto", "area": "old_north", "objective": "Carry the lantern to the Old North Church" },
+        { "type": "todo", "milestone": 5, "text": "Stealth section: carry the lantern through the North End, avoiding redcoat patrols by timing, alleys, and hiding spots. If spotted, Sivart goes back to the last checkpoint. No fighting." },
+        { "type": "card", "title": "The steeple", "text": "Two lanterns are lit. They're crossing by water." },
+        { "type": "card", "title": "The ride", "text": "Revere rows across the Charles River past a British warship, then rides across the countryside, waking houses: \"The regulars are coming out!\" Revere is captured near Lincoln; Sivart escapes on foot to Lexington." },
+        { "type": "todo", "milestone": null, "text": "Riding section across the countryside." },
+        { "type": "travel", "map": "l04-lexington", "spawn": "road" },
+        { "type": "dialogue", "dialogue": "L04_beat7#arriving" },
+        { "type": "goto", "area": "lexington_green", "objective": "Go to Lexington Green" },
+        { "type": "card", "title": "Lexington Green, sunrise", "text": "Captain John Parker's militia stand in two lines. British troops march in. An officer orders them to disperse. A single shot rings out." },
+        { "type": "flash" },
+        { "type": "dialogue", "dialogue": "L04_beat7#first_shot" },
+        { "type": "todo", "milestone": 5, "text": "History Mystery #2 marker appears on the green: Who fired the first shot?" },
+        { "type": "card", "title": "April 19, 1775", "text": "Eight militiamen were killed at Lexington. At Concord's North Bridge, the militia fought back and drove the British into a long, bloody retreat to Boston. The war had begun." },
+        { "type": "todo", "milestone": 4, "text": "The Record's gray page now shows color." },
+        { "type": "card", "title": "Back to the Archive", "text": "Mr. Senoj calls Sivart back to the Archive for the Chronicle Trial." },
+        { "type": "travel", "map": "archive", "spawn": "start" },
+        { "type": "todo", "milestone": 4, "text": "Chronicle Trial: How did tighter British control lead to armed conflict? (CER answer using the Archive Pages.)" }
+      ]
+    }
+  ]
+}

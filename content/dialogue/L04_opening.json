@@ -1,22 +1,14 @@
 {
   "id": "L04_opening",
-  "_note": "Mr. Senoj's Level 4 briefing, from 'Opening — The Archive' in docs/level4-script.md. TODO (Milestone 3/4): the stage directions (gray Record page, level question appearing in the Record) are not built yet.",
-  "lines": [
-    {
-      "speaker": "senoj",
-      "text": "Twenty-one years. In 1754 most colonists were proud to be British. By 1775 some of them were shooting at British soldiers. That page is supposed to explain how."
-    },
-    {
-      "speaker": "sivart",
-      "text": "And it's blank because… the Fade?"
-    },
-    {
-      "speaker": "senoj",
-      "text": "Because someone decided one side of the story was enough. Bring me evidence from both sides, and the page writes itself back in. Here's your question."
-    },
-    {
-      "speaker": "senoj",
-      "text": "Start where it starts: a war in the woods, and a very young officer who's about to lose."
-    }
-  ]
+  "_source": "docs/level4-script.md, 'Opening — The Archive'",
+  "conversations": {
+    "briefing": [
+      { "speaker": "senoj", "text": "Twenty-one years. In 1754 most colonists were proud to be British. By 1775 some of them were shooting at British soldiers. That page is supposed to explain how." },
+      { "speaker": "sivart", "text": "And it's blank because… the Fade?" },
+      { "speaker": "senoj", "text": "Because someone decided one side of the story was enough. Bring me evidence from both sides, and the page writes itself back in. Here's your question." }
+    ],
+    "send_off": [
+      { "speaker": "senoj", "text": "Start where it starts: a war in the woods, and a very young officer who's about to lose." }
+    ]
+  }
 }

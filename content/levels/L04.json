@@ -9,7 +9,8 @@
   ],
   "focus": "French and Indian War, British taxation acts, rising friction, outbreak of rebellion",
   "question": "How did tighter British control lead to armed conflict?",
-  "startMap": "test-map",
-  "briefing": "L04_opening",
-  "_todo": "TODO (Milestone 3): startMap points at the test map until the real Level 4 maps exist."
+  "quest": "L04_main",
+  "startMap": "l04-boston",
+  "_startMap": "Where Sivart goes after the main quest is finished (free roaming).",
+  "briefing": null
 }

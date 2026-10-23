@@ -1,0 +1,32 @@
+{
+  "id": "L04_beat3",
+  "_source": "docs/level4-script.md, 'Beat 3 — Pay Up (Boston, 1764–1767)'",
+  "conversations": {
+    "welcome": [
+      { "speaker": "kit", "text": "Welcome to Boston. Fair warning, every week there's a new law from London and every week we print the angry pamphlet about it." }
+    ],
+    "docks_sugar_act": [
+      { "speaker": "customs_officer", "text": "Every barrel of molasses is checked now. Smugglers go to the admiralty court. No jury." },
+      { "speaker": "merchant", "text": "No jury? Then a British judge decides everything." }
+    ],
+    "market_currency_act": [
+      { "speaker": "clerk", "text": "Colonial paper money is no longer allowed for debts." },
+      { "speaker": "farmer", "text": "Then how am I supposed to pay anyone?" }
+    ],
+    "shop_stamp_act": [
+      { "speaker": "stamp_distributor", "text": "Every newspaper, legal paper, almanac, and deck of playing cards needs a tax stamp." },
+      { "speaker": "kit", "text": "Paper? They're taxing *our* paper? This is the first tax Parliament has put directly on us." }
+    ],
+    "tavern_quartering_act": [
+      { "speaker": "sergeant", "text": "The colony will provide quarters and supplies for His Majesty's soldiers." },
+      { "speaker": "tavern_keeper", "text": "We pay for an army we never asked for." }
+    ],
+    "representation": [
+      { "speaker": "kit", "text": "We didn't vote for Parliament. Not one colonist sits in it. That's the whole problem. No taxation without representation." }
+    ],
+    "after_townshend": [
+      { "speaker": "sivart", "text": "So they took one tax away and then said they could tax anything they want." },
+      { "speaker": "kit", "text": "Now you understand Boston." }
+    ]
+  }
+}

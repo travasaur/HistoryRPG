@@ -1,0 +1,11 @@
+{
+  "id": "L04_beat5",
+  "_source": "docs/level4-script.md, 'Beat 5 — Tea in the Harbor (Griffin's Wharf, December 16, 1773)'",
+  "conversations": {
+    "cheaper_tea": [
+      { "speaker": "kit", "text": "It's cheaper tea. That's the trick. If we buy it, we're agreeing Parliament can tax us." },
+      { "speaker": "sivart", "text": "So it's not about the price. It's about the principle." },
+      { "speaker": "kit", "text": "Now you're thinking like a Bostonian." }
+    ]
+  }
+}

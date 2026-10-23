@@ -1,0 +1,14 @@
+{
+  "id": "L04_beat2",
+  "_source": "docs/level4-script.md, 'Beat 2 — The Line (frontier trading post, 1763)'",
+  "conversations": {
+    "proclamation": [
+      { "speaker": "british_officer", "text": "By order of His Majesty: no settlement west of the Appalachian Mountains. All lands beyond are reserved for the Indian nations." },
+      { "speaker": "settler", "text": "We fought that war for this land! Now we can't touch it?" },
+      { "speaker": "lenape_trader", "text": "You fought the French. Nobody asked us. Pontiac's warriors have already burned British forts this summer because settlers keep coming." }
+    ],
+    "officer_lens": [
+      { "speaker": "british_officer", "text": "Ten thousand soldiers to keep peace on this frontier. Do you know what that costs?" }
+    ]
+  }
+}

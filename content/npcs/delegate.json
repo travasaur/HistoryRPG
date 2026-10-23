@@ -1,0 +1,7 @@
+{
+  "id": "delegate",
+  "name": "Delegate",
+  "type": "composite",
+  "sprite": "people",
+  "frame": 8
+}

@@ -1,0 +1,17 @@
+{
+  "id": "L04_beat7",
+  "_source": "docs/level4-script.md, 'Beat 7 — One If by Land (April 18–19, 1775)'",
+  "conversations": {
+    "lanterns": [
+      { "speaker": "kit", "text": "The redcoats are moving tonight. Mr. Revere needs the signal hung in the Old North Church: one lantern if they march by land, two if they cross the river by boat." }
+    ],
+    "arriving": [
+      { "speaker": "sivart", "text": "It's almost dawn… they're already here." }
+    ],
+    "first_shot": [
+      { "speaker": "senoj", "text": "Stop. Before we go on: who fired that shot?" },
+      { "speaker": "sivart", "text": "I didn't see." },
+      { "speaker": "senoj", "text": "Neither did anyone else, apparently. That's a mystery for later." }
+    ]
+  }
+}
