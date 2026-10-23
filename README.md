@@ -3,6 +3,9 @@
 A top-down history RPG reviewing California 8th grade U.S. History. See `CLAUDE.md` for
 project rules and `docs/` for the design bible and the Level 4 script.
 
+**Play it:** https://travasaur.github.io/HistoryRPG/ (updates automatically a minute or two
+after every push to `main`; see the repository's Actions tab).
+
 ## Run it
 
 You need Node.js installed. In this folder:
