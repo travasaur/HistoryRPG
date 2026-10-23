@@ -27,8 +27,7 @@ export class PreloadScene extends Phaser.Scene {
   }
 
   create() {
-    // TODO (Milestone 2): start the Archive hub instead of the test map.
-    this.scene.start('World', { mapKey: 'test-map' });
+    this.scene.start('Title');
   }
 
   drawLoadingBar() {

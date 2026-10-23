@@ -1,0 +1,15 @@
+{
+  "id": "L04",
+  "number": 4,
+  "act": 1,
+  "title": "The Road to the American Revolution",
+  "years": "1754–1775",
+  "standards": [
+    "8.1"
+  ],
+  "focus": "French and Indian War, British taxation acts, rising friction, outbreak of rebellion",
+  "question": "How did tighter British control lead to armed conflict?",
+  "startMap": "test-map",
+  "briefing": "L04_opening",
+  "_todo": "TODO (Milestone 3): startMap points at the test map until the real Level 4 maps exist."
+}

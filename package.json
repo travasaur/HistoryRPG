@@ -11,6 +11,7 @@
     "make-placeholders": "node tools/make-placeholders.mjs"
   },
   "dependencies": {
+    "lz-string": "^1.5.0",
     "phaser": "^3.90.0"
   },
   "devDependencies": {

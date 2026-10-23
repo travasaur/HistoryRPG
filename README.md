@@ -14,6 +14,13 @@ npm run dev      # then open http://localhost:5173
 
 Add `?debug` to the address (http://localhost:5173/?debug) to see collision boxes.
 
+**Controls:** arrow keys or WASD to walk · Space (or tap) to talk, use things, and advance
+dialogue · Esc (or the ☰ button) for the pause menu: text size, save code, leave a level.
+
+**Saving:** progress autosaves in the browser. To move to another computer, open the pause
+menu → Get save code → Copy, then on the other computer choose "I have a save code" on the
+title screen.
+
 `npm run build` makes the finished website in `dist/` (for GitHub Pages).
 
 ## Where things live

@@ -1,0 +1,75 @@
+{
+  "acts": [
+    {
+      "id": 1,
+      "title": "Our Colonial Roots and Revolution",
+      "companion": "Kit",
+      "question": "Why was there an American Revolution?",
+      "levels": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Building a New Nation",
+      "companion": "Hannah",
+      "question": "How much power should government have, and for whom?",
+      "levels": [
+        "L06",
+        "L07",
+        "L08"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Growth and Westward Expansion",
+      "companion": "Mateo",
+      "question": "How and why did the United States expand?",
+      "levels": [
+        "L09",
+        "L10",
+        "L11",
+        "L12"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Regional Divisions and Social Change",
+      "companion": "Ruth",
+      "question": "What did freedom mean, and to whom?",
+      "levels": [
+        "L13",
+        "L14"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Sectional Crisis, Civil War, and Aftermath",
+      "companion": "Eli",
+      "question": "Who is considered an American?",
+      "levels": [
+        "L15",
+        "L16",
+        "L17",
+        "L18",
+        "L19"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "The Industrial Age, Immigration, Labor, and the Progressive Era",
+      "companion": "Sal",
+      "question": null,
+      "bonus": true,
+      "levels": [
+        "L20",
+        "L21",
+        "L22"
+      ]
+    }
+  ]
+}

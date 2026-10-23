@@ -17,12 +17,12 @@
    "firstgid": 1,
    "name": "placeholder",
    "image": "tilesets/placeholder.png",
-   "imagewidth": 64,
+   "imagewidth": 112,
    "imageheight": 16,
    "tilewidth": 16,
    "tileheight": 16,
-   "tilecount": 4,
-   "columns": 4,
+   "tilecount": 7,
+   "columns": 7,
    "margin": 0,
    "spacing": 0,
    "tiles": [
@@ -38,6 +38,26 @@
     },
     {
      "id": 3,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 5,
+     "properties": [
+      {
+       "name": "collides",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 6,
      "properties": [
       {
        "name": "collides",

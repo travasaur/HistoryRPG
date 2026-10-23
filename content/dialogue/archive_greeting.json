@@ -1,0 +1,14 @@
+{
+  "id": "archive_greeting",
+  "_note": "TODO: the docs don't script Mr. Senoj's Archive hub greeting yet. Replace these placeholder lines with real ones.",
+  "lines": [
+    {
+      "speaker": "senoj",
+      "text": "[TODO: Mr. Senoj's Archive greeting goes here.]"
+    },
+    {
+      "speaker": "senoj",
+      "text": "[Placeholder hint: open the Living Record on the desk to choose a level.]"
+    }
+  ]
+}
