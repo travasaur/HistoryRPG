@@ -1,0 +1,19 @@
+{
+  "name": "historyrpg",
+  "private": true,
+  "version": "0.1.0",
+  "description": "HistoryRPG: Sivart's Journey — a top-down history RPG for 8th grade U.S. History",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "make-placeholders": "node tools/make-placeholders.mjs"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.5"
+  }
+}

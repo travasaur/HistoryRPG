@@ -1,0 +1,14 @@
+{
+  "_about": "The ONLY place file paths for art, maps, and audio are listed. Game code refers to things by key (left side), never by path. To swap placeholder art for real art, change the url here.",
+  "spritesheets": [
+    { "key": "player", "url": "assets/sprites/player-placeholder.png", "frameWidth": 16, "frameHeight": 16 },
+    { "key": "npc-senoj", "url": "assets/sprites/senoj-placeholder.png", "frameWidth": 16, "frameHeight": 16 }
+  ],
+  "images": [],
+  "tilesets": [
+    { "key": "placeholder", "url": "maps/tilesets/placeholder.png" }
+  ],
+  "maps": [
+    { "key": "test-map", "url": "maps/test-map.tmj" }
+  ]
+}

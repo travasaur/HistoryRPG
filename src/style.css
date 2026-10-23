@@ -1,0 +1,62 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #1b1b24;
+}
+
+#game {
+  position: fixed;
+  inset: 0;
+}
+
+/* Layer for HTML text UI on top of the game. It ignores clicks except on its children. */
+#ui-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  font-family: system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+  /* One number controls dialogue text size (adjustable text size comes later). */
+  --text-size: 20px;
+}
+
+/* ---------- Dialogue box ---------- */
+
+.dialogue {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: min(720px, calc(100% - 32px));
+  box-sizing: border-box;
+  padding: 12px 16px 28px;
+  background: #fffaf0;
+  color: #222;
+  border: 4px solid #3b2f2f;
+  border-radius: 8px;
+  font-size: var(--text-size);
+  line-height: 1.4;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dialogue[hidden],
+.dialogue__speaker[hidden] {
+  display: none;
+}
+
+.dialogue__speaker {
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #7a3b12;
+}
+
+.dialogue__hint {
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
+  font-size: 14px;
+  color: #6b5d50;
+}

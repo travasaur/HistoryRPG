@@ -1,0 +1,14 @@
+{
+  "id": "test",
+  "_note": "Test conversation for Milestone 1. Lines are taken from the Level 4 opening in docs/level4-script.md.",
+  "lines": [
+    {
+      "speaker": "senoj",
+      "text": "Twenty-one years. In 1754 most colonists were proud to be British. By 1775 some of them were shooting at British soldiers. That page is supposed to explain how."
+    },
+    {
+      "speaker": "sivart",
+      "text": "And it's blank because… the Fade?"
+    }
+  ]
+}
